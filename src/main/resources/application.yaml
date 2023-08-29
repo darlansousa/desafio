@@ -5,7 +5,18 @@ spring:
     password: password
     driverClassName: org.h2.Driver
   jpa:
+    defer-datasource-initialization: true
     spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
   h2:
     console:
       enabled: true
+  client:
+    urls:
+      external-authorizer: "https://run.mocky.io/v3/"
+      external-notification: "http://o4d9z.mocklab.io/"
+feign:
+  client:
+    config:
+      notification:
+        connectTimeout: 500
+        readTimeout: 500
